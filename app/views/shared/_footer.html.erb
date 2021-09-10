@@ -1,31 +1,17 @@
 <div class='footer'>
+  <div class='footer-store-btn'>
+    <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
+    <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
+  </div>
   <div class='footer-contents'>
     <div class='furima-details'>
-      <h2 class='footer-content-head'>COMIKKEについて</h2>
-      <ul>
+      <ul class='footer-content-head'>
+        <li><%= link_to 'コミっけについて', "#", class: "footer-link" %></li>
         <li><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></li>
         <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></li>
-        <li><%= link_to 'COMIKKE利用規約', "#", class: "footer-link" %></li>
-        <li><%= link_to 'ポイントに関する特約', "#", class: "footer-link" %></li>
-      </ul>
-    </div>
-    <div class='furima-details'>
-      <h2 class='footer-content-head'>COMIKKEを見る</h2>
-      <ul>
-        <li><%= link_to 'カテゴリー一覧', "#", class: "footer-link" %></li>
-        <li><%= link_to 'ブランド一覧', "#", class: "footer-link" %></li>
-      </ul>
-    </div>
-    <div class='furima-details'>
-      <h2 class='footer-content-head'>COMIKKEについて</h2>
-      <ul>
-        <li><%= link_to 'COMIKKEガイド', "#", class: "footer-link" %></li>
-        <li><%= link_to 'COMMIKEロゴ利用ガイドライン', "#", class: "footer-link" %></li>
-        <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
+        <li><%= link_to '利用規約', "#", class: "footer-link" %></li>
       </ul>
     </div>
   </div>
-  <%#= link_to image_tag("logo-color.png", class:"comikke-icon"), "#" %>
-  <h1 class="comikke-icon">logo</h1>
   <p>© COMIKKE</p>
 </div>
