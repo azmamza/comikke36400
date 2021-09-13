@@ -11,11 +11,11 @@ class Post < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
 
-  # def self.search(search)
-  #   if search != ''
-  #     Post.where('text LIKE(?)', "%#{search}%")
-  #   else
-  #     Post.all
-  #   end
-  # end
+  def self.search(search)
+    if search != ''
+      Post.where('name LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
+  end
 end
