@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -15,19 +15,21 @@ class PostsController < ApplicationController
       render :new
     end
   end
-end
 
-# def edit
-#   @post = Post.find(params[:id])
-#   redirect_to action: :index unless @post.user.id == current_user.id
-# end
 
-# def search
-#   @posts = Post.search(params[:keyword])
-# end
+  def edit
+    @post = Post.find(params[:id])
+    redirect_to action: :index unless @post.user.id == current_user.id
+  end
 
-private
+  def search
+    @posts = Post.search(params[:keyword])
+  end
 
-def post_params
-  params.require(:post).permit(:name, :genre_id, :rating, :title, :review).merge(user_id: current_user.id)
+  private
+
+  def post_params
+    params.require(:post).permit(:name, :genre_id, :rating, :title, :review).merge(user_id: current_user.id)
+  end
+
 end
