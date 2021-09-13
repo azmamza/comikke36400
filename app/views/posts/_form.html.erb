@@ -4,6 +4,7 @@
     <%= form_with model: @post, local: true do |f| %>
 
       <%= render 'shared/error_messages', model: f.object %>
+
       <div class="form-group">
         <div class="form-group-row">
           <%= f.label :name, '作品名 ', class:'form-text' %>
@@ -61,7 +62,7 @@
             <%= f.submit '投稿する', class:"btn btn-success" %>
           </div>
         </div>
-
+      </div>
     <% end %>
   </div>
 </div>
