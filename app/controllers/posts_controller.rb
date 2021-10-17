@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @posts = Post.includes(:user).order("created_at DESC")
   end
@@ -16,10 +18,11 @@ class PostsController < ApplicationController
     end
   end
 
-
-  def edit
+  def destroy
     @post = Post.find(params[:id])
     redirect_to action: :index unless @post.user.id == current_user.id
+    @post.destroy
+    redirect_to root_path
   end
 
   def search
